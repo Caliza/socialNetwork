@@ -15,7 +15,7 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-    // Get a single student
+    // Get a single user
     getSingleUser(req, res) {
       User.findOne({ _id: req.params.userId })
         .select('-__v')
@@ -34,7 +34,7 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-    // create a new student
+    // create a new user
     createUser(req, res) {
       User.create(req.body)
         .then((user) => res.json(user))
@@ -70,7 +70,7 @@ module.exports = {
             })
             .catch((err) => res.status(500).json(err));
     },
-    // Add an assignment to a student
+    // Add an assignment to a user
     addFriend(req, res) {
     
         User.findOneAndUpdate(
@@ -87,7 +87,7 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
-    // Remove assignment from a student
+    // Remove assignment from a user
     removeFriend(req, res) {
       User.findOneAndUpdate(
         { _id: req.params.userId },

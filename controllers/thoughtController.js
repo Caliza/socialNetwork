@@ -12,7 +12,7 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-    // Get a single student
+    // Get a single thought
     getSingleThought(req, res) {
       Thought.findOne({ _id: req.params.thoughtId })
         .select('-__v')
@@ -29,7 +29,7 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
-    // create a new student
+    // create a new thought
     createThought(req, res) {console.log(req.body);
       Thought.create(req.body)
         .then((thought) => {console.log();
@@ -71,7 +71,7 @@ module.exports = {
         });
     },
   
-    // Add an assignment to a student
+    // Add an assignment to a thought
     addReaction(req, res) {
     
         Thought.findOneAndUpdate(
@@ -88,7 +88,7 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
-    // Remove assignment from a student
+    // Remove assignment from a thought
     removeReaction(req, res) {
       Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
