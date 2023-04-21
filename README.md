@@ -1,4 +1,4 @@
-<div align="center"><h1>e-commerce</h1></div>
+<div align="center"><h1>socialNetwork</h1></div>
 <hr />
 
 ## Table of Contents
